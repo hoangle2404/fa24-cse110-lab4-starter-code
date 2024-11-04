@@ -8,7 +8,7 @@ export const MyBudgetTracker = () => {
   return (
     <div className="container">
       <h1 className="mt-3">My Budget Planner</h1>
-      <div className="row mt-3">
+      <div className="row mt-10">
         <div className="col-sm">
           <Budget />
         </div>

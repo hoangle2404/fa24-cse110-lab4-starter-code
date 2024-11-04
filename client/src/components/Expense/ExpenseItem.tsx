@@ -8,10 +8,10 @@ const ExpenseItem = (currentExpense: Expense) => {
   const {expenses, setExpenses} = useContext(AppContext);
   
   const handleDeleteExpense = (currentExpense: Expense) => {
-    // Exercise: Remove expense from expenses context array
-
+    //Remove expense from backend
     deleteExpense(currentExpense.id);
 
+    // Remove expense from expenses context array 
     setExpenses((prev)=> prev.filter((expenseItem)=> expenseItem.id !== currentExpense.id));
   };
 

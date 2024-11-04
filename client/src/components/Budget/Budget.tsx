@@ -1,11 +1,26 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../../context/AppContext";
+import { fetchBudget } from "../../utils/budget-utils";
 
 const Budget = () => {
   const {budget, setBudget} = useContext(AppContext);
   const [edit, setEdit] = useState(false);
   const [newBudget, setNewBudget] = useState(budget);
   
+  useEffect(() => {
+    loadBudget();
+    }, );
+  
+    // Function to load budget and handle errors
+    const loadBudget = async () => {
+    try {
+      const fetchedBudget = await fetchBudget();
+      setBudget(fetchedBudget);
+    } catch (err: any) {
+      console.log(err.message);
+    }
+    };
+
   const handleUpdate = () => {
     setBudget(newBudget);
     setEdit(false);

@@ -14,6 +14,8 @@ jobs: # the things being executed
      - name: Install Dependencies
        working-directory: ./client
        run: npm install
+     - name: Fix Permissions for React Scripts
+       run: chmod +x ./node_modules/.bin/react-scripts
      - name: Unit Test
        working-directory: ./client
        run: npm test #the actual testing line

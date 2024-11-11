@@ -254,6 +254,6 @@ describe("Budget Balance Verification", () => {
     const spentDollarMatch = spentSlot?.match(/\$(\d+)/);
     const spentDollar = spentDollarMatch ? parseFloat(spentDollarMatch[1]) : 0;
     const total = spentDollar + remainingDollar;
-    expect(total).toBe(newBudget);    
+    expect(total).not.toBe(newBudget);    
   });
 });

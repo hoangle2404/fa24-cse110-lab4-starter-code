@@ -20,7 +20,6 @@ const Remaining = () => {
     };
   }, [remaining]);
   
-
   return (
     <div className={`alert ${alertType}`}>
       <span>Remaining: ${remaining}</span>

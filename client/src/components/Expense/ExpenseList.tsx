@@ -22,8 +22,7 @@ const ExpenseList = () => {
       console.log(err.message);
     }
     };
-
-
+    
   return (
     <ul className="list-group">
       {expenses.map((expense: Expense) => (

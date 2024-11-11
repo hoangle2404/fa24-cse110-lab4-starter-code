@@ -155,7 +155,6 @@ describe("Budget Balance Verification", () => {
     const testCost1 = 500;
     const testName2 = "Test 2";
     const testCost2 = 100;
-    const budget = 1000;
 
     const nameInput = screen.getByPlaceholderText("name");
     const costInput = screen.getByPlaceholderText("cost");
@@ -178,7 +177,7 @@ describe("Budget Balance Verification", () => {
     const spentDollarMatch = spentSlot?.match(/\$(\d+)/);
     const spentDollar = spentDollarMatch ? parseFloat(spentDollarMatch[1]) : 0;
     const total = spentDollar + remainingDollar;
-    expect(total).toBe(budget);
+    expect(total).toBe(1000);
   });
 
   test("Verify budget after adding 2 expenses and deleting 1 of them", () => {
